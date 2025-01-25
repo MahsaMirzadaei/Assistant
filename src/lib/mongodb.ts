@@ -5,7 +5,11 @@ if (!process.env.MONGODB_URI) {
 }
 
 const uri = process.env.MONGODB_URI;
-const options = { appName: "Assistant" };
+const options = {
+  appName: "AssistntCluster",
+  tlsAllowInvalidCertificates: true,
+  ssl: false,
+};
 
 let client: MongoClient;
 client = new MongoClient(uri, options);
